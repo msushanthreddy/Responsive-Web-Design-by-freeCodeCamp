@@ -1,0 +1,129 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Django</title>
+    <link rel="stylesheet" href="styles.css">
+  </head>
+  <body>
+    <main id="main-doc">
+        <nav id="navbar">
+            <header>Django documentation</header>
+            <a class="nav-link" href="#Django_Overview">Django Overview</a>
+            <a class="nav-link" href="#What_is_Django?">What is Django?</a>
+            <a class="nav-link" href="#Key_Features_of_Django">Key Features of Django</a>
+            <a class="nav-link" href="#Getting_Started_with_Django">Getting Started with Django</a>
+            <a class="nav-link" href="#Example_Code_Snippets">Example Code Snippets</a>
+            <a class="nav-link" href="#Benefits_of_Using_Django">Benefits of Using Django</a>
+        </nav>
+
+        <section id="Django_Overview" class="main-section">
+            <header>Django Overview</header>
+            <p>Django is a high-level Python web framework that encourages rapid development and clean, pragmatic design. It is known for its simplicity, scalability, and flexibility, making it a popular choice for web developers.</p>
+        </section>
+
+        <section id="What_is_Django?" class="main-section">
+            <header>What is Django?</header>
+            <p>Django is a web framework written in Python that follows the model-template-view (MTV) architectural pattern. It provides a robust set of tools and libraries to build web applications quickly and efficiently.</p>
+        </section>
+
+        <section id="Key_Features_of_Django" class="main-section">
+            <header>Key Features of Django</header>
+            <p>These are few key features:</p>
+            <ul>
+                <li>MTV Architecture: Django's architecture separates the data model, the user interface, and the application logic.</li>
+                <li>ORM (Object-Relational Mapping): Facilitates database operations using Python code instead of SQL.</li>
+                <li>Admin Interface: Automatically generated admin panels for managing application data.</li>
+                <li>Security: Built-in protection against common security threats like SQL injection, cross-site scripting (XSS), and cross-site request forgery (CSRF).</li>
+                <li>Scalability: Designed to handle high-traffic sites with ease.</li>
+            </ul>
+        </section>
+
+        <section id="Getting_Started_with_Django" class="main-section">
+            <header>Getting Started with Django</header>
+            <ol>
+                <li><p>Installation: Install Django using pip:</p>
+                    <pre><code>pip install django</code></pre>
+                </li>
+                <li><p>Creating a Project: Start a new Django project with:</p>
+                    <pre><code>django-admin startproject myproject</code></pre>
+                </li>
+                <li><p>Creating an App: Inside your project, create a new app:</p>
+                    <pre><code>python manage.py startapp myapp</code></pre>
+                </li>
+                <li><p>Defining Models: Define your data models in 'models.py':</p>
+                    <pre><code>from django.db import models
+
+class Article(models.Model):
+    title = models.CharField(max_length=100)
+    content = models.TextField()</code></pre>
+                </li>
+                <li><p>Running Migrations: Apply model changes to the database:</p>
+                    <pre><code>python manage.py makemigrations
+python manage.py migrate</code></pre>
+                </li>
+                <li><p>Starting the Development Server: Run the server locally:</p>
+                    <pre><code>python manage.py runserver</code></pre>
+                </li>
+            </ol>
+        </section>
+
+        <section id="Example_Code_Snippets" class="main-section">
+            <header>Example Code Snippets</header>
+            <ul>
+                <li><p>Basic Model:</p>
+                    <pre><code>from django.db import models
+
+class Blog(models.Model):
+    title = models.CharField(max_length=200)
+    content = models.TextField()
+    published_date = models.DateTimeField(auto_now_add=True)</code></pre>
+                </li>
+                <li><p>Simple View:</p>
+                    <pre><code>from django.http import HttpResponse
+
+def home(request):
+    return HttpResponse("Welcome to the Django tutorial!")</code></pre>
+                </li>
+                <li><p>URL Configuration:</p>
+                    <pre><code>from django.urls import path
+from . import views
+
+urlpatterns = [
+    path('', views.home, name='home'),
+]</code></pre>
+                </li>
+                <li><p>Admin Configuration:</p>
+                    <pre><code>from django.contrib import admin
+from .models import Blog
+
+admin.site.register(Blog)</code></pre>
+                </li>
+            </ul>
+        </section>
+
+        <section id="Benefits_of_Using_Django" class="main-section">
+            <header>Benefits of Using Django</header>
+            <ul>
+                <li>Rapid Development: Django's "batteries-included" philosophy helps developers build applications quickly.</li>
+                <li>Maintainable Code: Encourages the use of reusable code and the separation of concerns.</li>
+                <li>Comprehensive Documentation: Django provides extensive documentation and community support.</li>
+            </ul>
+        </section>
+    </main>
+</body>
+<footer id="footer">
+        ©️ Sushanth reddy Momula | Connect with me: 
+    <a href="https://www.linkedin.com/in/sushanth-reddy-momula-7987b4246/" target="_blank">
+        <img src="https://upload.wikimedia.org/wikipedia/commons/c/ca/LinkedIn_logo_initials.png" alt="LinkedIn" class="social-logo">
+    </a>
+    <a href="https://github.com/msushanthreddy" target="_blank">
+        <img src="https://github.githubassets.com/images/modules/logos_page/GitHub-Mark.png" alt="GitHub" class="social-logo">
+    </a>
+    <a href="https://www.instagram.com/itzsushanth/" target="_blank">
+        <img src="https://upload.wikimedia.org/wikipedia/commons/a/a5/Instagram_icon.png" alt="Instagram" class="social-logo">
+    </a>
+</footer>
+
+
+
+</html>
